@@ -4,14 +4,17 @@
     <meta charset="utf-8" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>AMP Ecommerce</title>
-    <link
-      rel="canonical"
-      href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/"
-    />
+    <link rel="canonical" href="home.amp" />
     <meta
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
     />
+    <script
+      async
+      custom-element="amp-sidebar"
+      src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+    ></script>
+
     <style amp-boilerplate>
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -77,9 +80,246 @@
       href="https://fonts.googleapis.com/css?family=Raleway"
     />
     <style amp-custom="">
+      :root {
+        --white: #fff;
+        --black: #111;
+
+        --primary: #0f172a;
+        --primary-foreground: #fff;
+        --primary-hover: #020617;
+
+        --secondary: #f1f5f9;
+        --secondary-foreground: #0f172a;
+        --secondary-hover: #e2e8f0;
+
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+
+        --rounded-md: 0.5rem;
+        --rounded-full: 1.5rem;
+      }
+
       * {
         box-sizing: border-box;
       }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        letter-spacing: 0.06rem;
+      }
+      a,
+      a:active,
+      a:visited {
+        color: inherit;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      article,
+      aside,
+      footer,
+      header,
+      nav,
+      section {
+        display: block;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      figcaption,
+      figure,
+      main {
+        display: block;
+      }
+      figure {
+        margin: 1em 40px;
+      }
+      hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+      }
+      pre {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+      }
+      a:active,
+      a:hover {
+        outline-width: 0;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
+      }
+      b,
+      strong {
+        font-weight: inherit;
+        font-weight: bolder;
+      }
+      code,
+      kbd,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      dfn {
+        font-style: italic;
+      }
+      mark {
+        background-color: #ff0;
+        color: #000;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      audio,
+      video {
+        display: inline-block;
+      }
+      audio:not([controls]) {
+        display: none;
+        height: 0;
+      }
+      img {
+        border-style: none;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: sans-serif;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+      button,
+      input {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type="reset"],
+      [type="submit"],
+      button,
+      html [type="button"] {
+        -webkit-appearance: button;
+      }
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      [type="button"]:-moz-focusring,
+      [type="reset"]:-moz-focusring,
+      [type="submit"]:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+      fieldset {
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+      }
+      legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
+      progress {
+        display: inline-block;
+        vertical-align: baseline;
+      }
+      textarea {
+        overflow: auto;
+      }
+      [type="checkbox"],
+      [type="radio"] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+      [type="number"]::-webkit-inner-spin-button,
+      [type="number"]::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      [type="search"]::-webkit-search-cancel-button,
+      [type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      details,
+      menu {
+        display: block;
+      }
+      summary {
+        display: list-item;
+      }
+      canvas {
+        display: inline-block;
+      }
+      [hidden],
+      template {
+        display: none;
+      }
+
+      html {
+        margin: 0;
+        padding: 0;
+        line-height: 1.15;
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -87,10 +327,728 @@
         font-smooth: always;
         -webkit-font-smoothing: antialiased;
       }
+
+      p {
+        padding: 0;
+        margin: 0;
+      }
+
+      .h1,
+      h1 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+      }
+      .h2,
+      h2 {
+        font-size: 2.2rem;
+        line-height: 2.5rem;
+      }
+      .h3,
+      h3 {
+        font-size: 1.75rem;
+        line-height: 2rem;
+      }
+      .h4,
+      h4 {
+        font-size: 1.38rem;
+        line-height: 1.5rem;
+      }
+      .h5,
+      h5 {
+        font-size: 1.125rem;
+        line-height: 1.125rem;
+      }
+      .h6,
+      h6 {
+        font-size: 1rem;
+        line-height: 1rem;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        margin-bottom: 0.7rem;
+      }
+
+      .font-normal {
+        font-weight: 400;
+      }
+      .font-medium {
+        font-weight: 500;
+      }
+      .font-semibold {
+        font-weight: 600;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .font-extrabold {
+        font-weight: 800;
+      }
+      .text-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+      .text-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      .list-none {
+        list-style: none;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      .no-underline {
+        text-decoration: none;
+      }
+      .cursor-pointer {
+        cursor: pointer;
+      }
+      .truncate {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-left {
+        text-align: left;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .flex {
+        display: -ms-flexbox;
+        display: flex;
+      }
+      .none {
+        display: none;
+      }
+      .inline {
+        display: inline;
+      }
+      .block {
+        display: block;
+      }
+      .inline-block {
+        display: inline-block;
+      }
+      .table {
+        display: table;
+      }
+      .table-cell {
+        display: table-cell;
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
+      .overflow-scroll {
+        overflow: scroll;
+      }
+      .overflow-auto {
+        overflow: auto;
+      }
+
+      .flex-col {
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+      .flex-wrap {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }
+
+      .justify-start {
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+      }
+      .justify-end {
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+      }
+      .justify-center {
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+      .justify-between {
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+      .justify-around {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+      }
+      .justify-evenly {
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
+      }
+      .items-center {
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .relative {
+        position: relative;
+      }
+      .absolute {
+        position: absolute;
+      }
+      .fixed {
+        position: fixed;
+      }
+      .top-0 {
+        top: 0;
+      }
+      .right-0 {
+        right: 0;
+      }
+      .bottom-0 {
+        bottom: 0;
+      }
+      .left-0 {
+        left: 0;
+      }
+      .z-1 {
+        z-index: 1;
+      }
+      .z-2 {
+        z-index: 2;
+      }
+      .z-3 {
+        z-index: 3;
+      }
+      .z-4 {
+        z-index: 4;
+      }
+
+      .m-0 {
+        margin: 0;
+      }
+      .mt-0 {
+        margin-top: 0;
+      }
+      .mr-0 {
+        margin-right: 0;
+      }
+      .mb-0 {
+        margin-bottom: 0;
+      }
+      .ml-0,
+      .mx-0 {
+        margin-left: 0;
+      }
+      .mx-0 {
+        margin-right: 0;
+      }
+      .my-0 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .m-1 {
+        margin: 0.5rem;
+      }
+      .mt-1 {
+        margin-top: 0.5rem;
+      }
+      .mr-1 {
+        margin-right: 0.5rem;
+      }
+      .mb-1 {
+        margin-bottom: 0.5rem;
+      }
+      .ml-1,
+      .mx-1 {
+        margin-left: 0.5rem;
+      }
+      .mx-1 {
+        margin-right: 0.5rem;
+      }
+      .my-1 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .m-2 {
+        margin: 1rem;
+      }
+      .mt-2 {
+        margin-top: 1rem;
+      }
+      .mr-2 {
+        margin-right: 1rem;
+      }
+      .mb-2 {
+        margin-bottom: 1rem;
+      }
+      .ml-2,
+      .mx-2 {
+        margin-left: 1rem;
+      }
+      .mx-2 {
+        margin-right: 1rem;
+      }
+      .my-2 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .m-3 {
+        margin: 1.5rem;
+      }
+      .mt-3 {
+        margin-top: 1.5rem;
+      }
+      .mr-3 {
+        margin-right: 1.5rem;
+      }
+      .mb-3 {
+        margin-bottom: 1.5rem;
+      }
+      .ml-3,
+      .mx-3 {
+        margin-left: 1.5rem;
+      }
+      .mx-3 {
+        margin-right: 1.5rem;
+      }
+      .my-3 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .m-4 {
+        margin: 2rem;
+      }
+      .mt-4 {
+        margin-top: 2rem;
+      }
+      .mr-4 {
+        margin-right: 2rem;
+      }
+      .mb-4 {
+        margin-bottom: 2rem;
+      }
+      .ml-4,
+      .mx-4 {
+        margin-left: 2rem;
+      }
+      .mx-4 {
+        margin-right: 2rem;
+      }
+      .my-4 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .m-auto {
+        margin: auto;
+      }
+      .mt-auto {
+        margin-top: auto;
+      }
+      .mr-auto {
+        margin-right: auto;
+      }
+      .mb-auto {
+        margin-bottom: auto;
+      }
+      .ml-auto,
+      .mx-auto {
+        margin-left: auto;
+      }
+      .mx-auto {
+        margin-right: auto;
+      }
+      .my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .p-0 {
+        padding: 0;
+      }
+      .pt-0 {
+        padding-top: 0;
+      }
+      .pr-0 {
+        padding-right: 0;
+      }
+      .pb-0 {
+        padding-bottom: 0;
+      }
+      .pl-0,
+      .px-0 {
+        padding-left: 0;
+      }
+      .px-0 {
+        padding-right: 0;
+      }
+      .py-0 {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .p-1 {
+        padding: 0.5rem;
+      }
+      .pt-1 {
+        padding-top: 0.5rem;
+      }
+      .pr-1 {
+        padding-right: 0.5rem;
+      }
+      .pb-1 {
+        padding-bottom: 0.5rem;
+      }
+      .pl-1 {
+        padding-left: 0.5rem;
+      }
+      .py-1 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .px-1 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      .p-2 {
+        padding: 1rem;
+      }
+      .pt-2 {
+        padding-top: 1rem;
+      }
+      .pr-2 {
+        padding-right: 1rem;
+      }
+      .pb-2 {
+        padding-bottom: 1rem;
+      }
+      .pl-2 {
+        padding-left: 1rem;
+      }
+      .py-2 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .px-2 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .p-3 {
+        padding: 1.5rem;
+      }
+      .pt-3 {
+        padding-top: 1.5rem;
+      }
+      .pr-3 {
+        padding-right: 1.5rem;
+      }
+      .pb-3 {
+        padding-bottom: 1.5rem;
+      }
+      .pl-3 {
+        padding-left: 1.5rem;
+      }
+      .py-3 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+      .px-3 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .p-4 {
+        padding: 2rem;
+      }
+      .pt-4 {
+        padding-top: 2rem;
+      }
+      .pr-4 {
+        padding-right: 2rem;
+      }
+      .pb-4 {
+        padding-bottom: 2rem;
+      }
+      .pl-4 {
+        padding-left: 2rem;
+      }
+      .py-4 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .px-4 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .w-8 {
+        width: 2rem;
+      }
+
+      .h-8 {
+        height: 2rem;
+      }
+
+      .bg-white {
+        background-color: var(--white);
+      }
+
+      .btn {
+        cursor: pointer;
+        border-radius: var(--rounded-full);
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .btn-icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn-sm {
+        padding: 0.3rem;
+        height: 2.25rem;
+      }
+
+      .btn-md {
+        padding: 0.5rem;
+        height: 2.5rem;
+      }
+
+      .btn-lg {
+        padding: 0.7rem;
+        height: 2.75rem;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-hover);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary);
+        color: var(---secondary-foreground);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--secondary-hover);
+      }
+
+      /* Start Custom Styles */
+      .sidebar {
+        width: 260px;
+      }
+
+      .header {
+        height: 3.5rem;
+      }
+
+      .main {
+        min-height: calc(100vh - 3.5rem);
+        margin-top: 3.5rem;
+      }
+
+      .hero-content .btn {
+        max-width: 250px;
+      }
+
+      /* End Custom Styles */
     </style>
   </head>
 
   <body>
-    <h1>AMP</h1>
+    <!-- Header -->
+    <header
+      class="header fixed flex justify-between items-center top-0 left-0 right-0 p-1 z-4 bg-white"
+    >
+      <div
+        role="button"
+        aria-label="open sidebar"
+        on="tap:header-sidebar.toggle"
+        tabindex="0"
+        class="btn btn-secondary btn-md btn-icon"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path fill="none" d="M0 0h24v24H0z"></path>
+          <path
+            fill="currentColor"
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+          ></path>
+        </svg>
+      </div>
+      <a href="home.amp.html" class="no-underline inline-block mx-auto">
+        <amp-img
+          src="./images/logo.svg"
+          width="96"
+          height="46"
+          layout="fixed"
+          alt="Logo"
+        />
+      </a>
+      <div />
+    </header>
+
+    <!-- Sidebar -->
+    <amp-sidebar
+      id="header-sidebar"
+      layout="nodisplay"
+      side="left"
+      class="sidebar bg-white p-1"
+    >
+      <div class="flex justify-end">
+        <div
+          role="button"
+          aria-label="close sidebar"
+          on="tap:header-sidebar.toggle"
+          tabindex="0"
+          class="btn btn-secondary btn-md btn-icon"
+        >
+          X
+        </div>
+      </div>
+      <a href="home.amp.html" class="no-underline flex justify-center">
+        <amp-img
+          src="./images/logo.svg"
+          width="96"
+          height="46"
+          layout="fixed"
+          alt="Logo"
+        />
+      </a>
+
+      <ul class="list-none my-3">
+        <li>
+          <a
+            href="home.amp.html"
+            class="no-underline block text-lg text-center font-medium"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="shop.amp.html"
+            class="no-underline block text-lg text-center font-medium"
+            >Shop</a
+          >
+        </li>
+      </ul>
+      <div class="my-3">
+        <h3 class="h7 block text-center mb-1 pt-3 uppercase font-bold">
+          Follow us
+        </h3>
+        <ul class="list-none flex justify-around items-center flex-wrap mb-4">
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="inline-block p-1"
+              aria-label="Link to Facebook"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="23.6"
+                viewBox="0 0 56 55"
+              >
+                <title>Facebook</title>
+                <path
+                  d="M47.5 43c0 1.2-.9 2.1-2.1 2.1h-10V30h5.1l.8-5.9h-5.9v-3.7c0-1.7.5-2.9 3-2.9h3.1v-5.3c-.6 0-2.4-.2-4.6-.2-4.5 0-7.5 2.7-7.5 7.8v4.3h-5.1V30h5.1v15.1H10.7c-1.2 0-2.2-.9-2.2-2.1V8.3c0-1.2 1-2.2 2.2-2.2h34.7c1.2 0 2.1 1 2.1 2.2V43"
+                  class="ampstart-icon ampstart-icon-fb"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="inline-block p-1"
+              aria-label="Link to Instagram"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 54 54"
+              >
+                <title>Instagram</title>
+                <path
+                  d="M27.2 6.1c-5.1 0-5.8 0-7.8.1s-3.4.4-4.6.9c-1.2.5-2.3 1.1-3.3 2.2-1.1 1-1.7 2.1-2.2 3.3-.5 1.2-.8 2.6-.9 4.6-.1 2-.1 2.7-.1 7.8s0 5.8.1 7.8.4 3.4.9 4.6c.5 1.2 1.1 2.3 2.2 3.3 1 1.1 2.1 1.7 3.3 2.2 1.2.5 2.6.8 4.6.9 2 .1 2.7.1 7.8.1s5.8 0 7.8-.1 3.4-.4 4.6-.9c1.2-.5 2.3-1.1 3.3-2.2 1.1-1 1.7-2.1 2.2-3.3.5-1.2.8-2.6.9-4.6.1-2 .1-2.7.1-7.8s0-5.8-.1-7.8-.4-3.4-.9-4.6c-.5-1.2-1.1-2.3-2.2-3.3-1-1.1-2.1-1.7-3.3-2.2-1.2-.5-2.6-.8-4.6-.9-2-.1-2.7-.1-7.8-.1zm0 3.4c5 0 5.6 0 7.6.1 1.9.1 2.9.4 3.5.7.9.3 1.6.7 2.2 1.4.7.6 1.1 1.3 1.4 2.2.3.6.6 1.6.7 3.5.1 2 .1 2.6.1 7.6s0 5.6-.1 7.6c-.1 1.9-.4 2.9-.7 3.5-.3.9-.7 1.6-1.4 2.2-.7.7-1.3 1.1-2.2 1.4-.6.3-1.7.6-3.5.7-2 .1-2.6.1-7.6.1-5.1 0-5.7 0-7.7-.1-1.8-.1-2.9-.4-3.5-.7-.9-.3-1.5-.7-2.2-1.4-.7-.7-1.1-1.3-1.4-2.2-.3-.6-.6-1.7-.7-3.5 0-2-.1-2.6-.1-7.6 0-5.1.1-5.7.1-7.7.1-1.8.4-2.8.7-3.5.3-.9.7-1.5 1.4-2.2.7-.6 1.3-1.1 2.2-1.4.6-.3 1.6-.6 3.5-.7h7.7zm0 5.8c-5.4 0-9.7 4.3-9.7 9.7 0 5.4 4.3 9.7 9.7 9.7 5.4 0 9.7-4.3 9.7-9.7 0-5.4-4.3-9.7-9.7-9.7zm0 16c-3.5 0-6.3-2.8-6.3-6.3s2.8-6.3 6.3-6.3 6.3 2.8 6.3 6.3-2.8 6.3-6.3 6.3zm12.4-16.4c0 1.3-1.1 2.3-2.3 2.3-1.3 0-2.3-1-2.3-2.3 0-1.2 1-2.3 2.3-2.3 1.2 0 2.3 1.1 2.3 2.3z"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="inline-block p-1"
+              aria-label="Link to Twitter"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="22.2"
+                viewBox="0 0 53 49"
+              >
+                <title>Twitter</title>
+                <path
+                  d="M45 6.9c-1.6 1-3.3 1.6-5.2 2-1.5-1.6-3.6-2.6-5.9-2.6-4.5 0-8.2 3.7-8.2 8.3 0 .6.1 1.3.2 1.9-6.8-.4-12.8-3.7-16.8-8.7C8.4 9 8 10.5 8 12c0 2.8 1.4 5.4 3.6 6.9-1.3-.1-2.6-.5-3.7-1.1v.1c0 4 2.8 7.4 6.6 8.1-.7.2-1.5.3-2.2.3-.5 0-1 0-1.5-.1 1 3.3 4 5.7 7.6 5.7-2.8 2.2-6.3 3.6-10.2 3.6-.6 0-1.3-.1-1.9-.1 3.6 2.3 7.9 3.7 12.5 3.7 15.1 0 23.3-12.6 23.3-23.6 0-.3 0-.7-.1-1 1.6-1.2 3-2.7 4.1-4.3-1.4.6-3 1.1-4.7 1.3 1.7-1 3-2.7 3.6-4.6"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </amp-sidebar>
+
+    <!-- Main -->
+    <main id="content" role="main" class="main">
+      <section class="relative">
+        <div class="block">
+          <amp-img
+            src="./images/hero.jpg"
+            width="550"
+            height="273"
+            layout="responsive"
+            alt="Hero"
+          />
+        </div>
+        <div class="hero-content flex justify-center flex-col p-3">
+          <h2 class="h4 mb-1">Men's Clothing</h2>
+          <p class="mb-2">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+          <a href="shop.amp.html" class="btn btn-primary btn-lg"> Shop </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

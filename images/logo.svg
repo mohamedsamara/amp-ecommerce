@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<svg width="800px" height="800px" viewBox="0 0 120 120" id="Layer_1" version="1.1" xml:space="preserve"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<style type="text/css">
+	.st0{fill:#FEE2B3;}
+	.st1{opacity:0.1;}
+	.st2{fill:#562349;}
+	.st3{fill:#AD6989;}
+	.st4{fill:#FFA299;}
+	</style>
+
+	<g>
+
+		<rect class="st0" height="62.8" width="66.9" x="26.6" y="36.4"/>
+
+		<rect class="st1" height="62.8" width="1.6" x="26.6" y="36.4"/>
+
+		<path class="st2" d="M63.8,61.6h-7.7c-2.6,0-4.7-2.1-4.7-4.7V36.4h17.1v20.5C68.5,59.5,66.4,61.6,63.8,61.6z"/>
+
+		<path class="st3" d="M46.8,61.6h-7.7c-2.6,0-4.7-2.1-4.7-4.7V36.4h17.1v20.5C51.5,59.5,49.4,61.6,46.8,61.6z"/>
+
+		<path class="st2" d="M29.7,61.6H22c-2.6,0-4.7-2.1-4.7-4.7V36.4h17.1v20.5C34.4,59.5,32.3,61.6,29.7,61.6z"/>
+
+		<path class="st3" d="M80.9,61.6h-7.7c-2.6,0-4.7-2.1-4.7-4.7V36.4h17.1v20.5C85.6,59.5,83.5,61.6,80.9,61.6z"/>
+
+		<path class="st2" d="M98,61.6h-7.7c-2.6,0-4.7-2.1-4.7-4.7V36.4h17.1v20.5C102.6,59.5,100.5,61.6,98,61.6z"/>
+
+		<g class="st1">
+
+			<path d="M19.1,57.7V37.2h17.1h17.1h17.1h17.1h15.3v-0.8H85.6H68.5H51.5H34.4H17.4v20.5c0,2.2,1.6,4.1,3.6,4.6    C19.8,60.6,19.1,59.2,19.1,57.7z"/>
+
+		</g>
+
+		<rect class="st4" height="24.8" width="16.4" x="39.4" y="74.4"/>
+
+		<g>
+
+			<rect class="st4" height="7.4" width="5.4" x="68" y="84.2"/>
+
+			<rect class="st4" height="7.4" width="5.4" x="75.8" y="84.2"/>
+
+			<rect class="st4" height="7.4" width="5.4" x="68" y="74.4"/>
+
+			<rect class="st4" height="7.4" width="5.4" x="75.8" y="74.4"/>
+
+		</g>
+
+		<path class="st4" d="M83.1,36.4H36.9V25.2c0-2.5,2-4.5,4.5-4.5h37.2c2.5,0,4.5,2,4.5,4.5V36.4z"/>
+
+		<path class="st1" d="M38.4,25.7c0-2.5,2-4.5,4.5-4.5h37.2c0.2,0,0.4,0,0.6,0.1c-0.6-0.3-1.3-0.6-2.1-0.6H41.4c-2.5,0-4.5,2-4.5,4.5   v11.2h1.5V25.7z"/>
+
+	</g>
+
+</svg>
